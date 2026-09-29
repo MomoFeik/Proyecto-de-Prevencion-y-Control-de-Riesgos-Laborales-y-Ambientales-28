@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portal documental SST, Medio Ambiente y Gestión de Riesgos - PAC PAC 2026">
+<title>PAC PAC | Portal SST, Ambiental y Gestión de Riesgos 2026</title>
+
+<style>
+:root{
+  --navy:#0b2942;
+  --blue:#174d68;
+  --teal:#287d7a;
+  --green:#4d8b62;
+  --cream:#f5f1e8;
+  --paper:#fbfaf7;
+  --white:#fff;
+  --text:#1c2933;
+  --muted:#64727c;
+  --line:#dfe5e7;
+  --shadow:0 16px 45px rgba(11,41,66,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,41,66,.96);
+  backdrop-filter:blur(12px);
+  color:#fff;
+  box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+.nav-inner{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:44px;height:44px;border:1px solid rgba(255,255,255,.4);
+  border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-weight:900;letter-spacing:-2px;font-size:16px;background:#fff;color:var(--navy);
+}
+.brand-text strong{display:block;font-size:18px;letter-spacing:1px}
+.brand-text small{opacity:.7;font-size:10px;letter-spacing:1.5px}
+.nav-links{display:flex;gap:24px;align-items:center;font-size:13px}
+.nav-links a{opacity:.88}
+.nav-links a:hover{opacity:1;color:#b8e1d8}
+.nav-cta{
+  padding:10px 16px;border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;background:rgba(255,255,255,.08)
+}
+
+/* HERO */
+.hero{
+  min-height:640px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(5,24,38,.93) 0%,rgba(5,24,38,.77) 43%,rgba(5,24,38,.18) 100%),
+    url("https://pacpac.com/wp-content/uploads/2024/10/Fabrica-de-papel-krat-Pac-Pac.jpg") center/cover;
+}
+.hero-content{color:#fff;max-width:700px;padding:90px 0}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 12px;border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);border-radius:999px;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase
+}
+.hero h1{
+  font-size:clamp(38px,6vw,68px);line-height:1.02;
+  letter-spacing:-2px;margin:22px 0 20px
+}
+.hero h1 span{color:#9ed4c5}
+.hero p{font-size:18px;max-width:650px;color:rgba(255,255,255,.86);margin-bottom:32px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:10px;padding:13px 18px;font-weight:700;font-size:13px;
+  transition:.2s;border:1px solid transparent;cursor:pointer
+}
+.btn-primary{background:#fff;color:var(--navy)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.06)}
+.btn-outline:hover{background:rgba(255,255,255,.13)}
+.hero-note{margin-top:28px;font-size:12px;color:rgba(255,255,255,.65)}
+
+/* INTRO */
+.section{padding:82px 0}
+.section-head{max-width:720px;margin-bottom:38px}
+.eyebrow{
+  color:var(--teal);font-weight:800;font-size:11px;
+  letter-spacing:1.8px;text-transform:uppercase
+}
+.section h2{font-size:clamp(28px,4vw,42px);line-height:1.1;margin:9px 0 14px;letter-spacing:-1px}
+.section-lead{color:var(--muted);font-size:16px}
+.about-grid{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center
+}
+.about-image{
+  min-height:400px;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);
+  background:url("https://pacpac.com/wp-content/uploads/2024/10/Bolsa-Papel-Kraft-Cafe-Manilla-Retorcida-000000-1.jpg") center/cover;
+}
+.about-copy p{color:#56636c}
+.about-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.about-item{padding:16px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.about-item strong{display:block;font-size:22px;color:var(--navy)}
+.about-item span{font-size:12px;color:var(--muted)}
+
+/* DOCUMENTS */
+.documents{background:#eef3f1}
+.doc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+}
+.doc-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:25px;min-height:270px;display:flex;flex-direction:column;
+  box-shadow:0 8px 24px rgba(11,41,66,.05);
+  transition:.25s
+}
+.doc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.doc-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:#edf5f2;font-size:25px;margin-bottom:20px
+}
+.doc-card h3{margin:0 0 9px;font-size:18px}
+.doc-card p{font-size:13px;color:var(--muted);margin:0 0 20px}
+.doc-card .btn{margin-top:auto;background:var(--navy);color:#fff}
+.doc-card .btn:hover{background:var(--blue)}
+
+/* STATS */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);background:#fff;border-radius:18px;
+  overflow:hidden;box-shadow:var(--shadow)
+}
+.stat{padding:28px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-size:30px;color:var(--navy)}
+.stat span{font-size:12px;color:var(--muted)}
+
+/* REPOSITORY */
+.repo{background:var(--navy);color:#fff}
+.repo-box{
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.2);color:var(--text)
+}
+.repo-head{
+  padding:22px 25px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)
+}
+.repo-head h3{margin:0;font-size:19px}
+.repo-head small{color:var(--muted)}
+.repo-head .btn{background:var(--navy);color:#fff}
+iframe{width:100%;height:650px;border:0;display:block}
+
+/* GALLERY */
+.gallery{
+  display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:16px
+}
+.gallery figure{margin:0;overflow:hidden;border-radius:18px;background:#ddd;position:relative}
+.gallery figure:first-child{grid-row:span 2}
+.gallery img{width:100%;height:100%;min-height:230px;object-fit:cover;display:block;transition:.4s}
+.gallery figure:hover img{transform:scale(1.04)}
+.caption{
+  position:absolute;left:0;right:0;bottom:0;padding:35px 18px 16px;
+  color:#fff;font-size:12px;font-weight:700;
+  background:linear-gradient(transparent,rgba(0,0,0,.72))
+}
+
+/* FOOTER */
+footer{background:#071d2d;color:#fff;padding:45px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
+footer h3{margin:0 0 12px}
+footer p,footer li{font-size:12px;color:rgba(255,255,255,.65)}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin:7px 0}
+.footer-bottom{
+  margin-top:35px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.45)
+}
+
+/* MOBILE */
+@media(max-width:950px){
+  .nav-links a:not(.nav-cta){display:none}
+  .doc-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .about-image{min-height:330px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery figure:first-child{grid-column:span 2;grid-row:auto}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .hero{min-height:590px}
+  .hero-content{padding:70px 0}
+  .hero p{font-size:15px}
+  .section{padding:60px 0}
+  .doc-grid,.stats,.about-list,.gallery,.footer-grid{grid-template-columns:1fr}
+  .gallery figure:first-child{grid-column:auto}
+  .stat{border-right:0!important;border-bottom:1px solid var(--line)}
+  .stat:last-child{border-bottom:0}
+  .repo-head{flex-direction:column;align-items:flex-start}
+  iframe{height:560px}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#inicio">
+      <div class="brand-mark">PAC</div>
+      <div class="brand-text">
+        <strong>PAC PAC</strong>
+        <small>GESTIÓN INTEGRAL · 2026</small>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#empresa">Empresa</a>
+      <a href="#documentos">Documentos</a>
+      <a href="#repositorio">Repositorio</a>
+      <a href="#galeria">Galería</a>
+      <a class="nav-cta" href="https://pacpac.com/" target="_blank">Web PAC PAC ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header id="inicio" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="kicker">Portal corporativo · SST · Medio Ambiente</span>
+      <h1>Gestión responsable para <span>grandes cosas.</span></h1>
+      <p>
+        Portal documental de PAC PAC para la consulta centralizada de la
+        documentación de Seguridad y Salud en el Trabajo, Gestión Ambiental,
+        Mapa de Riesgos y equipo responsable correspondiente al año 2026.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#documentos">Explorar documentación ↓</a>
+        <a class="btn btn-outline" href="https://drive.google.com/drive/folders/1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC?usp=drive_link" target="_blank">Abrir Google Drive ↗</a>
+      </div>
+      <div class="hero-note">Documentación corporativa · Versión 2026</div>
+    </div>
+  </div>
+</header>
+
+<section id="empresa" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="section-head">
+          <div class="eyebrow">Sobre PAC PAC</div>
+          <h2>Packaging sostenible que conecta marcas y personas.</h2>
+        </div>
+        <p>
+          PAC PAC se presenta como un referente en packaging sostenible,
+          especializado en bolsas de papel kraft y soluciones de empaque
+          personalizadas. La empresa señala que trabaja para transformar la
+          forma en que las marcas se presentan y conectan con sus clientes,
+          con presencia en Latinoamérica y Norteamérica.
+        </p>
+        <p>
+          En su información corporativa, PAC PAC destaca la calidad,
+          personalización, innovación y el compromiso con soluciones de
+          empaque más sostenibles. Este portal complementa esa visión
+          centralizando la documentación relacionada con SST, gestión
+          ambiental y prevención de riesgos.
+        </p>
+
+        <div class="about-list">
+          <div class="about-item">
+            <strong>20+</strong>
+            <span>Años de experiencia indicados por PAC PAC</span>
+          </div>
+          <div class="about-item">
+            <strong>110 M</strong>
+            <span>Bolsas de papel fabricadas en 2024, según su web</span>
+          </div>
+          <div class="about-item">
+            <strong>400 t</strong>
+            <span>Papel utilizado mensualmente, según su información corporativa</span>
+          </div>
+          <div class="about-item">
+            <strong>125 mil+</strong>
+            <span>Metros de papel impresos diariamente, según su web</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image" aria-label="Planta de producción de PAC PAC"></div>
+    </div>
+  </div>
+</section>
+
+<section id="documentos" class="section documents">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Centro documental</div>
+      <h2>Documentación 2026</h2>
+      <p class="section-lead">
+        Acceso organizado a los principales documentos de gestión preventiva,
+        ambiental y de seguridad de PAC PAC.
+      </p>
+    </div>
+
+    <div class="doc-grid">
+
+      <article class="doc-card">
+        <div class="doc-icon">🦺</div>
+        <h3>Plan Anual SST 2026</h3>
+        <p>Planificación anual de las actividades de Seguridad y Salud en el Trabajo, programas, objetivos y acciones preventivas.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC?usp=drive_link" target="_blank">Ver documentación →</a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-icon">🌱</div>
+        <h3>Plan de Manejo Ambiental</h3>
+        <p>Documentación para la gestión de aspectos ambientales, prevención de impactos, controles y seguimiento ambiental.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC?usp=drive_link" target="_blank">Ver documentación →</a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-icon">⚠️</div>
+        <h3>Mapa de Riesgos</h3>
+        <p>Material gráfico y documental relacionado con peligros, riesgos, zonas de exposición y medidas de prevención.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC?usp=drive_link" target="_blank">Ver documentación →</a>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-icon">👥</div>
+        <h3>Equipo de Gestión</h3>
+        <p>Documentos y recursos relacionados con las personas responsables de la gestión de SST y Medio Ambiente.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC?usp=drive_link" target="_blank">Ver documentación →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">PAC PAC en cifras</div>
+      <h2>Una operación orientada a la calidad y la sostenibilidad.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>20+</strong><span>Años en el mercado</span></div>
+      <div class="stat"><strong>110 M</strong><span>Bolsas fabricadas en 2024</span></div>
+      <div class="stat"><strong>400 t</strong><span>Papel mensual utilizado</span></div>
+      <div class="stat"><strong>125K+</strong><span>Metros impresos por día</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="repositorio" class="section repo">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#9ed4c5">Repositorio</div>
+      <h2>Documentos corporativos</h2>
+      <p class="section-lead" style="color:rgba(255,255,255,.68)">
+        Consulta directamente los archivos almacenados en el repositorio de Google Drive.
+      </p>
+    </div>
+
+    <div class="repo-box">
+      <div class="repo-head">
+        <div>
+          <h3>Repositorio PAC PAC · Gestión 2026</h3>
+          <small>Plan SST · Plan Ambiental · Mapa de Riesgos · Equipo</small>
+        </div>
+        <a class="btn" href="https://drive.google.com/drive/folders/1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC?usp=drive_link" target="_blank">Abrir Drive ↗</a>
+      </div>
+      <iframe
+        src="https://drive.google.com/embeddedfolderview?id=1_4FfNBiZfJ4_HZUg8IjDi14wRJa1gZzC#list"
+        title="Repositorio documental PAC PAC 2026">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Identidad y operación</div>
+      <h2>Una mirada a PAC PAC</h2>
+      <p class="section-lead">Imágenes tomadas de la página web oficial de PAC PAC.</p>
+    </div>
+
+    <div class="gallery">
+      <figure>
+        <img src="https://pacpac.com/wp-content/uploads/2024/10/Fabrica-de-papel-krat-Pac-Pac.jpg" alt="Planta de producción de PAC PAC">
+        <div class="caption">Planta de producción</div>
+      </figure>
+      <figure>
+        <img src="https://pacpac.com/wp-content/uploads/2024/10/Bolsa-Papel-Kraft-Cafe-Manilla-Plana-000000-1.jpg" alt="Bolsa de papel kraft con manilla plana">
+        <div class="caption">Packaging personalizado</div>
+      </figure>
+      <figure>
+        <img src="https://pacpac.com/wp-content/uploads/2024/10/Bolsa-Papel-Kraft-Cafe-Manilla-Retorcida-000000-1.jpg" alt="Bolsas de papel kraft con manilla retorcida">
+        <div class="caption">Soluciones en papel kraft</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">
+          <div class="brand-mark">PAC</div>
+          <div class="brand-text">
+            <strong>PAC PAC</strong>
+            <small>PORTAL DOCUMENTAL 2026</small>
+          </div>
+        </div>
+        <p style="margin-top:18px">
+          Portal interno para la consulta organizada de documentación de
+          Seguridad y Salud en el Trabajo, Gestión Ambiental y Riesgos.
+        </p>
+      </div>
+      <div>
+        <h3>Documentación</h3>
+        <ul>
+          <li><a href="#documentos">Plan Anual SST 2026</a></li>
+          <li><a href="#documentos">Plan de Manejo Ambiental</a></li>
+          <li><a href="#documentos">Mapa de Riesgos</a></li>
+          <li><a href="#documentos">Equipo de Gestión</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>PAC PAC Perú</h3>
+        <ul>
+          <li>infoperu@pacpac.com</li>
+          <li>(+51) 1 648 5482</li>
+          <li>Av. La Mar 550, oficina 506, Miraflores</li>
+          <li>Km 29.5 Panamericana Sur, Lurín</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PAC PAC · Portal de Gestión</span>
+      <a href="https://pacpac.com/" target="_blank">pacpac.com ↗</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
